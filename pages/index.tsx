@@ -4,7 +4,7 @@ import Sidebar from "../Components/Sidebar"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className='bg-black h-screen overflow-hidden'>
       <Head>
         <title>Spotify 2.0</title>
         <link rel="icon" href="/favicon.ico" />
