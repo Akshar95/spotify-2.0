@@ -1,4 +1,7 @@
-import React from 'react'
+import {getProviders, signIn} from "next-auth/react";
+
+
+//need to do SSR to get all of the providers from [...nextauth] line 34 before this page loads
 
 function Login() {
   return (
@@ -9,3 +12,7 @@ function Login() {
 }
 
 export default Login
+
+export async function getServerSideProps(){
+  const providers = await getProviders();
+}

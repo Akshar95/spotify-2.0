@@ -41,7 +41,7 @@ export default NextAuth({
   ],
   secret: process.env.JWT_SECRECT,
   pages: {
-    signIn: '/login',
+    signIn: '/login', //connected our custom login
   },
   callbacks: {
     //the authentication part
