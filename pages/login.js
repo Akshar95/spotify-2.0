@@ -1,17 +1,21 @@
-import { getProviders, signIn } from "next-auth/react";
+import React from 'react'
+import { getProviders, signIn } from 'next-auth/react'
 //need to do SSR to get all of the providers from [...nextauth] line 34 before this page loads
 
-function Login() {
-  return (
-    <div>
-      <h1>This is the login page</h1>
+function login({ providers }) {
+  <div>
+      <img className="mb-5 w-52" src="https://links.papareact.com/9xl" alt="" />
+      {Object.values(providers).map((provider) => (
+          <div><button>
+            test
+          </button></div>
+        ))}
     </div>
-  );
 };
 
-export default Login;
+export default login
 
-export async function getServerSideProps(){
+export async function getServerSideProps() {
   const providers = await getProviders();
 
   return {
@@ -20,4 +24,3 @@ export async function getServerSideProps(){
     },
   };
 }
-
